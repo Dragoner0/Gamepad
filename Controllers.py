@@ -217,7 +217,27 @@ class MMP1251(Gamepad):
         }
         self._setupReverseMaps()
 
+class SertronicsSNES(Gamepad):
+    fullName = "Sertronics SNES Game Controller"
 
+    def __init__(self, joystickNumber = 0):
+        Gamepad.__init__(self, joystickNumber)
+        self.axisNames = {
+            0: 'AXIS0',
+            1: 'AXIS1'
+        }
+        self.buttonNames = {
+            0:  'X',
+            1:  'A',
+            2:  'B',
+            3:  'Y',
+            4:  'L1',
+            5:  'R1',
+            8:  'SELECT',
+            9:  'START'
+        }
+        self._setupReverseMaps()
+        
 class example(Gamepad):
     # This class must have self.axisNames with a map
     # of numbers to capitalised strings. Follow the
